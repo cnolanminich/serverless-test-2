@@ -45,12 +45,17 @@ cryptography==45.0.6
     # via pyjwt
 dagster==1.11.0
     # via
+    #   dagster-cloud
     #   dagster-dg-cli
     #   dagster-graphql
     #   dagster-webserver
     #   serverless-test-2
+dagster-cloud==1.11.0
+    # via serverless-test-2
 dagster-cloud-cli==1.11.0
-    # via dagster-dg-core
+    # via
+    #   dagster-cloud
+    #   dagster-dg-core
 dagster-dg-cli==1.11.0
 dagster-dg-core==1.11.0
     # via dagster-dg-cli
@@ -61,6 +66,7 @@ dagster-pipes==1.11.0
 dagster-shared==1.11.0
     # via
     #   dagster
+    #   dagster-cloud
     #   dagster-cloud-cli
     #   dagster-dg-core
 dagster-webserver==1.11.0
@@ -74,6 +80,10 @@ fsspec==2025.7.0
     # via universal-pathlib
 github3-py==4.0.1
     # via dagster-cloud-cli
+googleapis-common-protos==1.70.0
+    # via
+    #   opentelemetry-exporter-otlp-proto-grpc
+    #   opentelemetry-exporter-otlp-proto-http
 gql==3.5.3
     # via
     #   dagster-dg-core
@@ -93,6 +103,7 @@ grpcio==1.74.0
     # via
     #   dagster
     #   grpcio-health-checking
+    #   opentelemetry-exporter-otlp-proto-grpc
 grpcio-health-checking==1.71.2
     # via dagster
 h11==0.16.0
@@ -106,8 +117,10 @@ idna==3.10
     #   anyio
     #   requests
     #   yarl
-importlib-metadata==8.7.0 ; python_full_version < '3.10'
-    # via markdown
+importlib-metadata==8.7.0
+    # via
+    #   markdown
+    #   opentelemetry-api
 jinja2==3.1.6
     # via
     #   dagster
@@ -133,11 +146,40 @@ mdurl==0.1.2
     # via markdown-it-py
 multidict==6.6.4
     # via yarl
+opentelemetry-api==1.36.0
+    # via
+    #   dagster-cloud
+    #   opentelemetry-exporter-otlp-proto-grpc
+    #   opentelemetry-exporter-otlp-proto-http
+    #   opentelemetry-sdk
+    #   opentelemetry-semantic-conventions
+opentelemetry-exporter-otlp-proto-common==1.36.0
+    # via
+    #   opentelemetry-exporter-otlp-proto-grpc
+    #   opentelemetry-exporter-otlp-proto-http
+opentelemetry-exporter-otlp-proto-grpc==1.36.0
+    # via dagster-cloud
+opentelemetry-exporter-otlp-proto-http==1.36.0
+    # via dagster-cloud
+opentelemetry-proto==1.36.0
+    # via
+    #   opentelemetry-exporter-otlp-proto-common
+    #   opentelemetry-exporter-otlp-proto-grpc
+    #   opentelemetry-exporter-otlp-proto-http
+opentelemetry-sdk==1.36.0
+    # via
+    #   dagster-cloud
+    #   opentelemetry-exporter-otlp-proto-grpc
+    #   opentelemetry-exporter-otlp-proto-http
+opentelemetry-semantic-conventions==0.57b0
+    # via opentelemetry-sdk
 packaging==25.0
     # via
     #   dagster-cloud-cli
     #   dagster-dg-core
     #   dagster-shared
+pex==2.50.3
+    # via dagster-cloud
 prompt-toolkit==3.0.51
     # via questionary
 propcache==0.3.2
@@ -145,7 +187,9 @@ propcache==0.3.2
 protobuf==5.29.5
     # via
     #   dagster
+    #   googleapis-common-protos
     #   grpcio-health-checking
+    #   opentelemetry-proto
 psutil==7.0.0 ; sys_platform == 'win32'
     # via dagster
 pycparser==2.22 ; platform_python_implementation != 'PyPy'
@@ -180,7 +224,9 @@ pyyaml==6.0.2
     #   dagster-shared
     #   uvicorn
 questionary==2.1.0
-    # via dagster-cloud-cli
+    # via
+    #   dagster-cloud
+    #   dagster-cloud-cli
 referencing==0.36.2
     # via
     #   jsonschema
@@ -188,10 +234,12 @@ referencing==0.36.2
 requests==2.32.4
     # via
     #   dagster
+    #   dagster-cloud
     #   dagster-cloud-cli
     #   dagster-graphql
     #   github3-py
     #   gql
+    #   opentelemetry-exporter-otlp-proto-http
     #   requests-toolbelt
 requests-toolbelt==1.0.0
     # via gql
@@ -245,6 +293,7 @@ tqdm==4.67.1
     # via dagster
 typer==0.16.0
     # via
+    #   dagster-cloud
     #   dagster-cloud-cli
     #   dagster-dg-core
 typing-extensions==4.14.1
@@ -257,6 +306,11 @@ typing-extensions==4.14.1
     #   graphene
     #   graphql-core
     #   multidict
+    #   opentelemetry-api
+    #   opentelemetry-exporter-otlp-proto-grpc
+    #   opentelemetry-exporter-otlp-proto-http
+    #   opentelemetry-sdk
+    #   opentelemetry-semantic-conventions
     #   pydantic
     #   pydantic-core
     #   referencing
@@ -294,5 +348,5 @@ yarl==1.20.1
     # via gql
 yaspin==3.1.0
     # via dagster-dg-core
-zipp==3.23.0 ; python_full_version < '3.10'
+zipp==3.23.0
     # via importlib-metadata
