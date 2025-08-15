@@ -1,0 +1,4 @@
+locations:
+- code_source:
+    package_name: serverless_test_2.definitions
+  location_name: serverless_test_2
