@@ -1,4 +1,4 @@
 locations:
 - code_source:
-    package_name: serverless_test_2.definitions
+    python_file: src/serverless_test_2/definitions.py
   location_name: serverless_test_2
