@@ -1,5 +1,4 @@
 locations:
 - code_source:
-    package_name: serverless_test.definitions
-  working_directory: ./src/
+    package_name: src.serverless_test.definitions
   location_name: serverless_test
