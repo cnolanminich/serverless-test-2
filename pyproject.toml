@@ -1,5 +1,5 @@
 [project]
-name = "serverless_test_2"
+name = "serverless_test"
 requires-python = ">=3.9,<3.13"
 version = "0.1.0"
 dependencies = [
@@ -18,15 +18,15 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/serverless_test_2"]
+packages = ["src/serverless_test"]
 
 [tool.dg]
 directory_type = "project"
 
 [tool.dg.project]
-root_module = "serverless_test_2"
+root_module = "serverless_test"
 registry_modules = [
-    "serverless_test_2.components.*",
+    "serverless_test.components.*",
 ]
 
 
